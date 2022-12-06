@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.Users{
+  display: grid;
+  grid-template-columns: repeat(2, 25rem);
+  gap: 2rem;
+  grid-auto-rows: 20rem;
+  justify-content: space-around;
+  align-items: center;
+}
