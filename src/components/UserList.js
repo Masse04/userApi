@@ -5,13 +5,24 @@ import logo from '../logo192.png'
 const UserList = () => {
   const userLien = 'https://jsonplaceholder.typicode.com/users' ;
   const [listOfUser,setListOfUser] = useState([]) ;
+  
   useEffect(()=> {
 
+    // methode fetch avec promise et async
+    const promise01 = fetch(userLien)
+    promise01.then(async(res) => {
+      try {
+        const res2 = await res.json()
+        setListOfUser(res2)
+      } catch (error) {
+        console.error(error.message)
+      }
+    })
     // methode fetch
-    fetch(userLien)
+    /* fetch(userLien)
       .then(res => res.json())
       .then(res2 => setListOfUser(res2))
-      .catch(err => console.error(err.message))
+      .catch(err => console.error(err.message)) */
 
       // methode axios
       /*axios(userLien)
